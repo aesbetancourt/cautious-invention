@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="login-dark">
-      <form method="post" @submit.prevent="getFormValues">
+      <form method="post" @submit.prevent="authUser">
         <h2 class="sr-only">Iniciar Sesión</h2>
         <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
         <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" v-model="email"></div>
@@ -15,28 +15,25 @@
 <script>
   import Firebase from 'firebase';
   const auth = Firebase.auth();
-
-
   export default {
     data() {
       return{
-        email: '',
-        password: ''
+          email: '',
+          password: ''
       }
     },
     methods: {
-      getFormValues() {
+      authUser() {
         const email = this.email;
         const password = this.password;
-        auth.signInWithEmailAndPassword(email, password).catch(function(error) {
-          // Handle Errors here.
-          let errorCode = error.code;
-          let errorMessage = error.message;
-
-          window.alert('Error Message: ' + errorMessage + ' Error Code: ' + errorCode)
-          // ...
-
+        auth.signInWithEmailAndPassword(email, password).then(() =>{
+            this.$router.replace('home')
+        }).catch((error) => {
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            window.alert('Error Message: ' + errorMessage + ' Error Code: ' + errorCode)
         });
+
       },
     },
     computed: {
@@ -44,7 +41,7 @@
     },
     props: {
 
-    }
+    },
   }
 </script>
 
