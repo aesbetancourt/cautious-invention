@@ -14,6 +14,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Start from './components/Start';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Home from './components/Home';
 //Firebase
 import { firestorePlugin } from 'vuefire';
 
@@ -38,6 +39,10 @@ const router = new VueRouter({
     {
       path: '/login',
       component: Login
+    },
+    {
+      path: '/home',
+      component: Home
     }
   ]
 });
