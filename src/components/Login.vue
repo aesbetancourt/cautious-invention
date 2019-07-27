@@ -15,11 +15,14 @@
 <script>
   import Firebase from 'firebase';
   const auth = Firebase.auth();
+  const db = Firebase.database();
+
   export default {
     data() {
       return{
           email: '',
-          password: ''
+          password: '',
+          name: ''
       }
     },
     methods: {
