@@ -8,7 +8,7 @@
 .register-photo .image-holder {
   display: table-cell;
   width: auto;
-  background: url(../img/meeting.jpg);
+  background: url(../img/library.jpg);
   background-size: cover;
 }
 
