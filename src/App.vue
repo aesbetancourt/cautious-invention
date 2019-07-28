@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view/>
   </div>
 </template>
 
 <script>
-// Components
+    // Components
 import Start from './components/Start';
 import Signup from './components/Signup';
 import Login from './components/Login';
