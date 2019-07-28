@@ -8,10 +8,19 @@
           <div class="form-group"><input class="form-control" type="text" name="firstname" placeholder="Nombre" v-model="firstname"></div>
           <div class="form-group"><input class="form-control" type="text" name="lastname" placeholder="Apellido" v-model="lastname"></div>
           <div class="form-group"><input class="form-control" type="text" name="cedula" placeholder="Cédula" v-model="ci"></div>
+          <div class="form-group"><input class="form-control" type="text" name="telefono" placeholder="Telefono" v-model="phone"></div>
           <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" v-model="email"></div>
           <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña" v-model="password"></div>
           <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Repetir Contraseña"></div>
-          <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(37,55,102);">Registrate!</button></div><a class="already" href="/login">Ya tienes una cuenta? Inicia aqui.</a></form>
+          <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(37,55,102);">Registrate!</button>
+          </div>
+            <a class="already" href="#">
+              <router-link to="/login">
+                Ya tienes una cuenta? Inicia aqui.
+              </router-link>
+
+            </a>
+        </form>
       </div>
     </div>
   </div>
@@ -32,6 +41,7 @@
           firstname: '',
           lastname: '',
           ci: '',
+          phone: ''
 
       }
     },
@@ -43,7 +53,8 @@
             db.collection('profiles').doc(user.user.uid).set({
                 firstname: this.firstname,
                 lastname: this.lastname,
-                ci: this.ci
+                ci: this.ci,
+                phone: this.phone
             })
                 .then(() =>{
                     console.log("Doc Written")

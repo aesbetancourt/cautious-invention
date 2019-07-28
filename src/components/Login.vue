@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <div class="login-dark">
+  <div class="register-photo">
+    <div class="form-container">
+      <div class="image-holder" ></div>
       <form method="post" @submit.prevent="authUser">
-        <h2 class="sr-only">Iniciar Sesión</h2>
-        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+        <h2 class="text-center"><strong>Inicia</strong>&nbsp;sesión.</h2>
         <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" v-model="email"></div>
-        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" v-model="password"></div>
-        <div class="form-group"><button class="btn btn-primary btn-block">Iniciar Sesion</button></div>
+        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña" v-model="password"></div>
+        <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(37,55,102);">Iniciar Sesion!</button></div>
       </form>
     </div>
   </div>
@@ -22,7 +22,6 @@
       return{
           email: '',
           password: '',
-          name: ''
       }
     },
     methods: {
@@ -49,5 +48,5 @@
 </script>
 
 <style>
-  @import "../assets/css/Login-Form-Dark.css";
+  @import "../assets/css/Login-Form-with-Photo.css";
 </style>

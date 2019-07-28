@@ -1,6 +1,6 @@
 .register-photo {
   background: #f1f7fc;
-  padding: 30px 0;
+  padding: 180px 0;
   width: 100%;
   height: 100vh;
 }
@@ -8,7 +8,7 @@
 .register-photo .image-holder {
   display: table-cell;
   width: auto;
-  background: url(../img/meeting.jpg);
+  background: url(../img/login.jpg);
   background-size: cover;
 }
 
