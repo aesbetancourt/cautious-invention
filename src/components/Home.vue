@@ -32,7 +32,9 @@
                       Perfil
                     </router-link>
                   </b-dropdown-item>
-                  <b-dropdown-item href="/">Cerrar Sesión</b-dropdown-item>
+                  <b-dropdown-item @click="logOut">
+                    Cerrar Sesión
+                  </b-dropdown-item>
                 </b-nav-item-dropdown>
                 </li>
                   <div
@@ -72,6 +74,16 @@
       }
     },
     methods: {
+        logOut(){
+            auth.signOut()
+                .then(()=>{
+                    console.log('out');
+                    this.$router.replace('/')
+                })
+                .catch((err)=>{
+                    alert("Error " + err)
+                })
+        }
 
     },
     computed: {
