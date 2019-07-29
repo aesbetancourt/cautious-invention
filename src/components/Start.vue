@@ -56,10 +56,11 @@
         </div>
         <div class="buttons">
           <a class="btn btn-primary" role="button" href="#">
-            Primary
+            Lorem.
           </a>
           <button class="btn btn-light" type="button">
-            Secondary</button>
+            Lorem.
+          </button>
         </div>
       </div>
     </div>
@@ -71,16 +72,16 @@
               <h3>Servicios</h3>
               <ul>
                 <li><a href="#">Lorem ipsum.</a></li>
-                <li><a href="#">Development</a></li>
-                <li><a href="#">Hosting</a></li>
+                <li><a href="#">Lorem ipsum.</a></li>
+                <li><a href="#">Lorem ipsum.</a></li>
               </ul>
             </div>
             <div class="col-sm-6 col-md-3 item">
               <h3>Acerca</h3>
               <ul>
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Careers</a></li>
+                <li><a href="#">Lorem.</a></li>
+                <li><a href="#">Lorem.</a></li>
+                <li><a href="#">Lorem.</a></li>
               </ul>
             </div>
             <div class="col-md-6 item text">

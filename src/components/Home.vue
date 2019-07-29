@@ -8,11 +8,11 @@
           </a>
           <hr style="height: 1px; width: 180px;border: none; background-color: #fff ">
           <ul class="nav navbar-nav text-light" id="accordionSidebar">
-            <li class="nav-item" role="presentation"><a class="nav-link active h3"><span>Dashboard</span></a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link active"><span>Tus libros</span></a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link active"><span>Amigos</span></a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link active"><span>Recomendaciones</span></a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link active" @click="logOut"><span>Cerrar Sesión</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link active h3"><i class="fa fa-bar-chart"></i><span>Dashboard</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fa fa-book"></i><span>Tus libros</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fa fa-users"></i><span>Amigos</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fa fa-thumbs-up"></i><span>Recomendaciones</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link active" @click="logOut"><i class="fa fa-times"></i><span>Cerrar Sesión</span></a></li>
           </ul>
         </div>
       </nav>
@@ -25,15 +25,14 @@
                 <li class="nav-item dropdown no-arrow" role="presentation">
                 <li>
                 <b-nav-item-dropdown right>
-                  <!-- Using 'button-content' slot -->
-                  <template slot="button-content" class="text-dark"><strong>{{this.email}}</strong></template>
+                  <div slot="button-content" class="text-dark"><strong>{{this.email}}   </strong><i class="fa fa-caret-down"></i></div>
                   <b-dropdown-item >
                     <router-link to="/profile">
-                      Perfil
+                      <i class="fa fa-eye"></i> Perfil
                     </router-link>
                   </b-dropdown-item>
                   <b-dropdown-item @click="logOut">
-                    Cerrar Sesión
+                    <i class="fa fa-times"></i> Cerrar Sesión
                   </b-dropdown-item>
                 </b-nav-item-dropdown>
                 </li>
@@ -66,7 +65,7 @@
               <div class="col-lg-5 col-xl-4">
                 <div class="card shadow mb-4">
                   <div class="card-header d-flex justify-content-between align-items-center">
-                    <h6 class="text-primary font-weight-bold m-0">Aqui encontraras...</h6>
+                    <h6 class="text-primary font-weight-bold m-0">Aquí <strong>encontrarás</strong>...</h6>
                   </div>
                   <div class="card-body">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, alias autem culpa cum deleniti dolorem
