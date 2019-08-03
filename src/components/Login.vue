@@ -13,30 +13,15 @@
 </template>
 
 <script>
-  import Firebase from 'firebase';
-  const auth = Firebase.auth();
-  const db = Firebase.database();
-
   export default {
     data() {
       return{
-          email: '',
-          password: '',
+        email: '',
+        password: ''
       }
     },
     methods: {
-      authUser() {
-        const email = this.email;
-        const password = this.password;
-        auth.signInWithEmailAndPassword(email, password).then(() =>{
-            this.$router.replace('home')
-        }).catch((error) => {
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            window.alert('Error Message: ' + errorMessage + ' Error Code: ' + errorCode)
-        });
 
-      },
     },
     computed: {
 

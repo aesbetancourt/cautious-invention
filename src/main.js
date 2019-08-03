@@ -19,16 +19,9 @@ import Home from './components/Home';
 import Profile from './components/Profile';
 
 //Firebase
-import { firestorePlugin } from 'vuefire';
-
-
-const db = Firebase.firestore();
-import Firebase from 'firebase';
-const auth = Firebase.auth();
 
 // Vue configs
 Vue.use(VueRouter);
-Vue.use(firestorePlugin);
 Vue.use(BootstrapVue);
 
 const router = new VueRouter({
@@ -50,30 +43,15 @@ const router = new VueRouter({
     {
       path: '/home',
       component: Home,
-      meta: { requiresAuth: true },
     },
     {
       path: '/profile',
       component: Profile,
-      meta: { requiresAuth: true },
     }
 
   ]
 });
 
-
-
-router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
-  const currentUser = auth.currentUser;
-  if (requiresAuth && !currentUser) {
-    next('/')
-  } else if (requiresAuth && currentUser) {
-    next()
-  } else {
-    next()
-  }
-});
 
 
 Vue.config.productionTip = false;

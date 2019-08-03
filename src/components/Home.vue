@@ -12,7 +12,7 @@
             <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fa fa-book"></i><span>Tus libros</span></a></li>
             <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fa fa-users"></i><span>Amigos</span></a></li>
             <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fa fa-thumbs-up"></i><span>Recomendaciones</span></a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link active" @click="logOut"><i class="fa fa-times"></i><span>Cerrar Sesión</span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link active"><i class="fa fa-times"></i><span>Cerrar Sesión</span></a></li>
           </ul>
         </div>
       </nav>
@@ -25,13 +25,13 @@
                 <li class="nav-item dropdown no-arrow" role="presentation">
                 <li>
                 <b-nav-item-dropdown right>
-                  <div slot="button-content" class="text-dark"><strong>{{this.email}}   </strong><i class="fa fa-caret-down"></i></div>
+                  <div slot="button-content" class="text-dark"><strong>   </strong><i class="fa fa-caret-down"></i></div>
                   <b-dropdown-item >
                     <router-link to="/profile">
                       <i class="fa fa-eye"></i> Perfil
                     </router-link>
                   </b-dropdown-item>
-                  <b-dropdown-item @click="logOut">
+                  <b-dropdown-item >
                     <i class="fa fa-times"></i> Cerrar Sesión
                   </b-dropdown-item>
                 </b-nav-item-dropdown>
@@ -90,29 +90,13 @@
 </template>
 
 <script>
-    import Firebase from 'firebase';
-    const auth = Firebase.auth();
-    const db = Firebase.firestore();
 
   export default {
     data() {
       return {
-          user: '',
-          email: '',
       }
     },
     methods: {
-        logOut(){
-            auth.signOut()
-                .then(()=>{
-                    console.log('out');
-                    this.$router.replace('/')
-                })
-                .catch((err)=>{
-                    alert("Error " + err)
-                })
-        }
-
     },
     computed: {
 
@@ -120,11 +104,6 @@
     props: {
 
     },
-      created() {
-          var user = auth.currentUser;
-          this.email = user.email;
-          console.log(user)
-      }
   }
 </script>
 
